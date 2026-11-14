@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <meta name="description" content="ACO DURAVEL BRASIL LTDA. — Fornecimento atacadista de materiais de construção, ferragens, ferramentas e soluções industriais em Palhoça, SC.">
+  <title>ACO DURAVEL BRASIL LTDA. · Materiais de Construção & Soluções Industriais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- Reset & Variables ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #0a0d10;
+      --bg-dark: #10151a;
+      --bg-card: #161d24;
+      --bg-card-hi: #1c252e;
+      --steel-100: #e8edf2;
+      --steel-200: #c3ced8;
+      --steel-300: #9aa9b6;
+      --steel-400: #6f7f8d;
+      --steel-500: #4c5a66;
+      --accent: #ff7a1a;
+      --accent-soft: #ffb066;
+      --accent-deep: #c9540a;
+      --line: #26313b;
+      --line-hi: #35424e;
+      --ok: #35c48a;
+      --text: #e8edf2;
+      --text-dim: #9aa9b6;
+      --shadow: 0 18px 40px -18px rgba(0,0,0,0.85);
+      --shadow-lg: 0 30px 70px -25px rgba(0,0,0,0.9);
+      --radius: 6px;
+      --radius-lg: 12px;
+      --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* subtle industrial grid overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(38, 49, 59, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(38, 49, 59, 0.35) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+      mask-image: radial-gradient(circle at 50% 0%, #000 0%, transparent 75%);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    /* ---------- Typography ---------- */
+    h1, h2, h3, h4 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 5vw, 3.4rem);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    h3 { font-size: 1.35rem; font-weight: 700; }
+
+    p { color: var(--text-dim); }
+
+    .mono { font-family: var(--mono); }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 36px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    /* ---------- Layout ---------- */
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.75rem; }
+    .section { padding: 7rem 0; position: relative; }
+    .section-dark { background: var(--bg-dark); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .section-header { max-width: 820px; margin-bottom: 3.5rem; }
+    .section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .section-header p { font-size: 1.08rem; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.95rem 2.1rem;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1.5px solid transparent;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #120800;
+      box-shadow: 0 10px 30px -12px rgba(255, 122, 26, 0.7);
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-soft);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px -12px rgba(255, 122, 26, 0.85);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--steel-100);
+      border-color: var(--line-hi);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent-soft);
+      background: rgba(255, 122, 26, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm { padding: 0.7rem 1.5rem; font-size: 0.82rem; }
+
+    /* ---------- Top Bar / Nav ---------- */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 13, 16, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      height: 74px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--steel-100);
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 40px; height: 40px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--accent), var(--accent-deep));
+      border-radius: 4px;
+      color: #120800;
+      font-size: 1.15rem;
+      box-shadow: 0 6px 18px -8px rgba(255, 122, 26, 0.8);
+    }
+
+    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .brand-text strong { font-size: 0.98rem; font-weight: 800; letter-spacing: 0.04em; }
+    .brand-text span {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 3px;
+      color: var(--steel-400);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .nav { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 1.9rem; list-style: none; }
+
+    .nav-links a {
+      color: var(--steel-200);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
+      padding: 0.4rem 0;
+      transition: var(--transition);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--accent-soft); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta { display: inline-flex; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-hi);
+      border-radius: var(--radius);
+      color: var(--steel-100);
+      font-size: 1.15rem;
+      width: 44px; height: 44px;
+      cursor: pointer;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      padding: 8rem 0 7rem;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255, 122, 26, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 12% 80%, rgba(53, 196, 138, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, var(--bg-deep) 0%, #0c1116 100%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -8%;
+      top: -10%;
+      width: 620px; height: 620px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -4%;
+      top: -4%;
+      width: 440px; height: 440px;
+      border: 1px dashed var(--line-hi);
+      border-radius: 50%;
+      opacity: 0.4;
+      pointer-events: none;
+      animation: spin 90s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 .hl { color: var(--accent); }
+
+    .hero-tagline {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      color: var(--steel-200);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3.25rem; }
+
+    .hero-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid var(--line);
+      padding-top: 2rem;
+    }
+
+    .spec-item .spec-num {
+      font-family: var(--mono);
+      font-size: 1.85rem;
+      font-weight: 600;
+      color: var(--steel-100);
+      line-height: 1;
+    }
+
+    .spec-item .spec-num span { color: var(--accent); }
+    .spec-item .spec-label {
+      display: block;
+      margin-top: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--steel-400);
+    }
+
+    /* Hero right panel: "certified" card */
+    .hero-panel {
+      background: linear-gradient(165deg, var(--bg-card-hi), var(--bg-card));
+      border: 1px solid var(--line-hi);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    .hero-panel h3 {
+      font-size: 0.82rem;
+      font-family: var(--mono);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .panel-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+
+    .panel-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      font-size: 0.95rem;
+      color: var(--steel-200);
+      padding-bottom: 1.1rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .panel-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .panel-list i {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    .panel-list strong { color: var(--steel-100); font-weight: 600; }
+
+    /* ---------- Trust strip ---------- */
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-dark);
+      padding: 1.6rem 0;
+    }
+
+    .trust-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem 2.5rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--steel-300);
+    }
+
+    .trust-item i { color: var(--accent); font-size: 1rem; }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p { margin-bottom: 1.25rem; font-size: 1.03rem; }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 1rem 1.1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--steel-200);
+      transition: var(--transition);
+    }
+
+    .about-point:hover {
+      border-color: var(--accent);
+      transform: translateX(3px);
+      background: var(--bg-card-hi);
+    }
+
+    .about-point i { color: var(--accent); margin-top: 0.2rem; }
+
+    .about-visual {
+      position: relative;
+      border: 1px solid var(--line-hi);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, var(--bg-card-hi), var(--bg-card));
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .about-visual .viz-title {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--steel-400);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .viz-title .dot {
+      width: 7px; height: 7px;
+      background: var(--ok);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.5rem;
+      box-shadow: 0 0 10px var(--ok);
+    }
+
+    .bar-row { margin-bottom: 1.6rem; }
+    .bar-row:last-child { margin-bottom: 0; }
+
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--steel-300);
+      margin-bottom: 0.6rem;
+      letter-spacing: 1px;
+    }
+
+    .bar-label b { color: var(--steel-100); font-weight: 600; }
+
+    .bar-track {
+      height: 8px;
+      background: var(--bg-deep);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-deep), var(--accent));
+      border-radius: 4px;
+      width: 0;
+      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ---------- Services ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.9rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent 70%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--line-hi);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      background: var(--bg-card-hi);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: rgba(255, 122, 26, 0.1);
+      border: 1px solid rgba(255, 122, 26, 0.3);
+      color: var(--accent);
+      font-size: 1.45rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 { margin-bottom: 0.8rem; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.01em; }
+    .service-card p { font-size: 0.93rem; margin-bottom: 1.5rem; flex: 1; }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 0.28rem 0.65rem;
+      border-radius: 3px;
+      background: rgba(255, 122, 26, 0.08);
+      border: 1px solid rgba(255, 122, 26, 0.22);
+      color: var(--accent-soft);
+      font-weight: 500;
+    }
+
+    /* ---------- Process ---------- */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      counter-reset: step;
+    }
+
+    .process-step {
+      position: relative;
+      padding: 2.25rem 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+    }
+
+    .process-step:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hi);
+      transform: translateY(-4px);
+    }
+
+    .process-step::after {
+      counter-increment: step;
+      content: '0' counter(step);
+      position: absolute;
+      top: 1.5rem; right: 1.6rem;
+      font-family: var(--mono);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--line-hi);
+      line-height: 1;
+      transition: var(--transition);
+    }
+
+    .process-step:hover::after { color: var(--accent); }
+
+    .process-step i {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .process-step h3 { font-size: 1.05rem; margin-bottom: 0.6rem; text-transform: uppercase; }
+    .process-step p { font-size: 0.88rem; }
+
+    /* ---------- Product Categories / Catalog ---------- */
+    .catalog-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .cat-tab {
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.65rem 1.35rem;
+      background: transparent;
+      border: 1px solid var(--line-hi);
+      color: var(--steel-300);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .cat-tab:hover { color: var(--accent-soft); border-color: var(--accent); }
+    .cat-tab.active { background: var(--accent); border-color: var(--accent); color: #120800; font-weight: 700; }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .catalog-item {
+      display: flex;
+      gap: 1.1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .catalog-item:hover {
+      border-color: var(--line-hi);
+      background: var(--bg-card-hi);
+      transform: translateY(-3px);
+    }
+
+    .catalog-icon {
+      width: 46px; height: 46px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 122, 26, 0.08);
+      border: 1px solid rgba(255, 122, 26, 0.25);
+      border-radius: 4px;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    .catalog-body h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--steel-100);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+
+    .catalog-body p { font-size: 0.86rem; margin: 0; }
+
+    .catalog-code {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: var(--steel-500);
+      letter-spacing: 1.5px;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* ---------- Sectors / Industries ---------- */
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .sector-card {
+      text-align: center;
+      padding: 2.25rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+    }
+
+    .sector-card:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hi);
+      transform: translateY(-5px);
+    }
+
+    .sector-card i {
+      font-size: 1.9rem;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .sector-card h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .sector-card p { font-size: 0.82rem; margin: 0; }
+
+    /* ---------- Stats band ---------- */
+    .stats-band {
+      background: linear-gradient(120deg, #12181e, #0d1216);
+      border-top: 1px solid var(--line-hi);
+      border-bottom: 1px solid var(--line-hi);
+      padding: 4.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 22px, rgba(255,122,26,0.02) 22px, rgba(255,122,26,0.02) 23px);
+      pointer-events: none;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-block { text-align: center; }
+
+    .stat-block .num {
+      font-family: var(--mono);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--steel-100);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-block .num span { color: var(--accent); }
+
+    .stat-block .lbl {
+      display: block;
+      margin-top: 0.7rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--steel-400);
+    }
+
+    /* ---------- Testimonials ---------- */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 2.1rem;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .testi-card:hover { border-color: var(--line-hi); background: var(--bg-card-hi); }
+
+    .testi-stars { color: var(--accent); letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 1.1rem; }
+
+    .testi-card blockquote {
+      font-size: 0.98rem;
+      color: var(--steel-200);
+      margin-bottom: 1.75rem;
+      flex: 1;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+    }
+
+    .testi-avatar {
+      width: 42px; height: 42px;
+      border-radius: 4px;
+      background: linear-gradient(145deg, var(--accent-deep), var(--accent));
+      color: #120800;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .testi-author strong { display: block; font-size: 0.9rem; color: var(--steel-100); }
+    .testi-author span { font-size: 0.78rem; color: var(--steel-400); font-family: var(--mono); letter-spacing: 0.5px; }
+
+    /* ---------- FAQ ---------- */
+    .faq-wrap { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem; }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.open { border-color: rgba(255, 122, 26, 0.45); }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 1.35rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: var(--steel-100);
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .faq-q:hover { color: var(--accent-soft); }
+
+    .faq-q i {
+      color: var(--accent);
+      font-size: 0.85rem;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-q i { transform: rotate(45deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.6rem;
+    }
+
+    .faq-item.open .faq-a { max-height: 320px; padding: 0 1.6rem 1.4rem; }
+    .faq-a p { font-size: 0.93rem; margin: 0; }
+
+    /* ---------- CTA Banner ---------- */
+    .cta-band {
+      position: relative;
+      border: 1px solid var(--line-hi);
+      border-radius: var(--radius-lg);
+      padding: 4.5rem 3rem;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,122,26,0.14) 0%, transparent 60%),
+        linear-gradient(160deg, var(--bg-card-hi), var(--bg-dark));
+    }
+
+    .cta-band::before,
+    .cta-band::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-band::before { top: -160px; left: -100px; }
+    .cta-band::after { bottom: -180px; right: -120px; border-style: dashed; }
+
+    .cta-band h2 { position: relative; z-index: 1; }
+    .cta-band p { max-width: 640px; margin: 0 auto 2.25rem; font-size: 1.05rem; position: relative; z-index: 1; }
+    .cta-band .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
+
+    /* ---------- Contact / Info section ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+
+    .info-card h3 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .info-card h3 i { color: var(--accent); }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 0.93rem;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+    .info-row .k { color: var(--steel-300); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; }
+    .info-row .v { color: var(--steel-100); font-weight: 600; text-align: right; }
+
+    .map-visual {
+      background:
+        linear-gradient(160deg, rgba(255,122,26,0.08), rgba(16,21,26,0.95)),
+        repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 42px),
+        repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 42px),
+        var(--bg-card);
+      border: 1px solid var(--line-hi);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-pin {
+      position: absolute;
+      top: 38%;
+      left: 46%;
+      color: var(--accent);
+      font-size: 1.9rem;
+      filter: drop-shadow(0 0 14px rgba(255,122,26,0.8));
+      animation: bob 3s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .map-label {
+      background: rgba(10, 13, 16, 0.9);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--line-hi);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-label strong { display: block; color: var(--steel-100); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .map-label span { color: var(--steel-400); font-size: 0.85rem; font-family: var(--mono); letter-spacing: 0.5px; }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      background: var(--footer-bg, #070a0c);
+      border-top: 1px solid var(--line-hi);
+      padding: 4.5rem 0 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-name {
+      font-size: clamp(1.5rem, 4.5vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--steel-100);
+      line-height: 1.1;
+    }
+
+    .footer-name span { color: var(--accent); }
+
+    .footer-divider {
+      width: 70px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .footer-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line-hi);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+    }
+
+    .cred-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: var(--steel-300);
+    }
+
+    .cred-item i { color: var(--accent); font-size: 1rem; width: 1.25rem; }
+    .cred-item strong { color: var(--steel-100); font-weight: 700; }
+    .cred-item .mono { font-size: 0.92rem; }
+
+    .location-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      background: rgba(255, 122, 26, 0.08);
+      border: 1px dashed rgba(255, 122, 26, 0.45);
+      border-radius: 40px;
+      padding: 0.6rem 1.5rem;
+    }
+
+    .footer-note {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      color: var(--steel-500);
+      text-transform: uppercase;
+    }
+
+    /* ---------- Reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1100px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+      .testi-grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
+    }
+
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-panel { max-width: 560px; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-toggle { display: grid; place-items: center; }
+      .nav-cta { display: none; }
+      .nav.open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 74px;
+        left: 0; right: 0;
+        background: var(--bg-dark);
+        border-bottom: 1px solid var(--line-hi);
+        padding: 1.5rem 1.75rem;
+        gap: 1.1rem;
+        box-shadow: var(--shadow);
+      }
+      .nav.open .nav-links a { display: block; }
+    }
+
+    @media (max-width: 700px) {
+      .section { padding: 4.5rem 0; }
+      .hero { padding: 5rem 0 4.5rem; }
+      .hero-specs { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .hero-actions .btn { flex: 1 1 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .about-points { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-credentials { padding: 1.25rem 1rem; }
+      .cred-item { font-size: 0.85rem; }
+      .cta-band { padding: 3rem 1.5rem; }
+      .contact-grid .info-card { padding: 1.75rem; }
+    }
+
+    @media (max-width: 520px) {
+      .hero-specs { grid-template-columns: 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .trust-inner { justify-content: center; text-align: center; }
+      .brand-text strong { font-size: 0.86rem; }
+      .footer-name { font-size: 1.4rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ TOP NAV ============ -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="brand" aria-label="ACO DURAVEL BRASIL LTDA.">
+        <span class="brand-mark"><i class="fas fa-industry"></i></span>
+        <span class="brand-text">
+          <strong>ACO DURAVEL BRASIL</strong>
+          <span>Materiais &amp; Soluções</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav">
+        <ul class="nav-links">
+          <li><a href="#sobre">Empresa</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#setores">Setores</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#contato" class="btn btn-accent btn-sm nav-cta">Fale Conosco</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Palhoça · Santa Catarina</span>
+          <h1>ACO<br>DURAVEL<br><span class="hl">BRASIL</span></h1>
+          <p class="hero-tagline">
+            Fornecimento atacadista de materiais de construção, ferragens, ferramentas
+            e soluções industriais com padrão profissional. Resistência que constrói,
+            confiança que sustenta.
+          </p>
+          <div class="hero-actions">
+            <a href="#servicos" class="btn btn-accent"><i class="fas fa-layer-group"></i> Ver Serviços</a>
+            <a href="#contato" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Falar com a Equipe</a>
+          </div>
+          <div class="hero-specs">
+            <div class="spec-item">
+              <div class="spec-num">+<span>2.000</span></div>
+              <span class="spec-label">Itens em linha</span>
+            </div>
+            <div class="spec-item">
+              <div class="spec-num"><span>100</span>%</div>
+              <span class="spec-label">Atacado &amp; Indústria</span>
+            </div>
+            <div class="spec-item">
+              <div class="spec-num"><span>SC</span></div>
+              <span class="spec-label">Base em Palhoça</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal">
+          <h3>// Estrutura de Fornecimento</h3>
+          <ul class="panel-list">
+            <li><i class="fas fa-check"></i><span><strong>Atacado profissional</strong> — volume, preço e prazos competitivos para construtoras e revendas.</span></li>
+            <li><i class="fas fa-check"></i><span><strong>Ferragens &amp; ferramentas</strong> — linha completa para obras, manutenção e produção industrial.</span></li>
+            <li><i class="fas fa-check"></i><span><strong>Insumos industriais</strong> — materiais técnicos para operações contínuas e alta demanda.</span></li>
+            <li><i class="fas fa-check"></i><span><strong>Logística regional</strong> — atendimento ágil com base em Palhoça, SC.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-item"><i class="fas fa-certificate"></i> Padrão de qualidade</div>
+        <div class="trust-item"><i class="fas fa-truck-fast"></i> Logística regional</div>
+        <div class="trust-item"><i class="fas fa-boxes-stacked"></i> Fornecimento em volume</div>
+        <div class="trust-item"><i class="fas fa-headset"></i> Atendimento B2B</div>
+        <div class="trust-item"><i class="fas fa-shield-halved"></i> Confiabilidade operacional</div>
+      </div>
+    </div>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <span class="eyebrow">Sobre a Empresa</span>
+          <h2>Construímos <span style="color:var(--accent)">confiança</span> com cada entrega</h2>
+          <p>
+            A <strong>ACO DURAVEL BRASIL LTDA.</strong> atua no fornecimento atacadista de
+            materiais de construção, ferragens, ferramentas e insumos industriais. Com base
+            em Palhoça, Santa Catarina, atendemos construtoras, revendas, indústrias e
+            profissionais que exigem resistência, padrão e previsibilidade.
+          </p>
+          <p>
+            Nosso portfólio reúne desde itens essenciais para a obra civil até componentes
+            técnicos para operações industriais. Trabalhamos com processos organizados,
+            controle de qualidade e relacionamento próximo — porque acreditamos que
+            fornecimento é parceria de longo prazo.
+          </p>
+          <p>
+            Cada pedido é tratado com a seriedade que a sua operação exige: análise técnica,
+            conferência de especificações e acompanhamento até a entrega.
+          </p>
+
+          <div class="about-points">
+            <div class="about-point"><i class="fas fa-industry"></i> Foco em atacado B2B</div>
+            <div class="about-point"><i class="fas fa-screwdriver-wrench"></i> Linha técnica completa</div>
+            <div class="about-point"><i class="fas fa-map-location-dot"></i> Atuação regional em SC</div>
+            <div class="about-point"><i class="fas fa-clipboard-check"></i> Padrão de conferência</div>
+          </div>
+        </div>
+
+        <div class="about-visual reveal">
+          <div class="viz-title">
+            <span><span class="dot"></span> Indicadores de Fornecimento</span>
+            <span class="mono">2024</span>
+          </div>
+
+          <div class="bar-row">
+            <div class="bar-label"><span>Materiais de Construção</span><b>92%</b></div>
+            <div class="bar-track"><div class="bar-fill" data-fill="92"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label"><span>Ferragens &amp; Ferramentas</span><b>86%</b></div>
+            <div class="bar-track"><div class="bar-fill" data-fill="86"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label"><span>Insumos Industriais</span><b>88%</b></div>
+            <div class="bar-track"><div class="bar-fill" data-fill="88"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label"><span>Atendimento &amp; Prazos</span><b>95%</b></div>
+            <div class="bar-track"><div class="bar-fill" data-fill="95"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section class="section section-dark" id="servicos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Serviços &amp; Soluções</span>
+          <h2>Um portfólio para cada etapa da sua operação</h2>
+          <p>
+            Do alicerce ao acabamento, da bancada industrial à manutenção preventiva:
+            reunimos linhas complementares para simplificar o seu abastecimento.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-trowel-bricks"></i></div>
+            <h3>Materiais de Construção</h3>
+            <p>Cimento, argamassas, blocos, vergalhões, perfis e itens estruturais para obras residenciais, comerciais e industriais.</p>
+            <div class="service-tags"><span class="tag">Estrutural</span><span class="tag">Alvenaria</span><span class="tag">Obra civil</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+            <h3>Ferragens &amp; Fixação</h3>
+            <p>Parafusos, porcas, arruelas, chumbadores, dobradiças, correntes e componentes de fixação para montagem e manutenção.</p>
+            <div class="service-tags"><span class="tag">Fixação</span><span class="tag">Montagem</span><span class="tag">Inox</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-toolbox"></i></div>
+            <h3>Ferramentas Profissionais</h3>
+            <p>Ferramentas manuais e elétricas, acessórios, bits, discos de corte e itens de uso intenso em canteiro e oficina.</p>
+            <div class="service-tags"><span class="tag">Manual</span><span class="tag">Elétrica</span><span class="tag">Acessórios</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-gears"></i></div>
+            <h3>Insumos Industriais</h3>
+            <p>Componentes técnicos, abrasivos, lubrificantes, EPIs e suprimentos para linhas de produção e manutenção contínua.</p>
+            <div class="service-tags"><span class="tag">Produção</span><span class="tag">Manutenção</span><span class="tag">EPI</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+            <h3>Fornecimento em Volume</h3>
+            <p>Atendimento atacadista com condições comerciais para revendas, construtoras e indústrias com demanda recorrente.</p>
+            <div class="service-tags"><span class="tag">Atacado</span><span class="tag">Reposição</span><span class="tag">Contratos</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
+            <h3>Suprimento sob Demanda</h3>
+            <p>Levantamento de necessidades, cotação consolidada e organização de pedidos para reduzir rupturas e otimizar compras.</p>
+            <div class="service-tags"><span class="tag">Cotação</span><span class="tag">Planejamento</span><span class="tag">B2B</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats-band">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-block">
+            <div class="num">+<span>2.000</span></div>
+            <span class="lbl">Itens cadastrados</span>
+          </div>
+          <div class="stat-block">
+            <div class="num"><span>15</span>+</div>
+            <span class="lbl">Segmentos atendidos</span>
+          </div>
+          <div class="stat-block">
+            <div class="num"><span>100</span>%</div>
+            <span class="lbl">Foco em atacado</span>
+          </div>
+          <div class="stat-block">
+            <div class="num"><span>SC</span></div>
+            <span class="lbl">Atuação regional</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATÁLOGO ============ -->
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Catálogo Técnico</span>
+          <h2>Linhas de produtos organizadas por aplicação</h2>
+          <p>Consulte por categoria e encontre rapidamente o que sua obra ou operação precisa.</p>
+        </div>
+
+        <div class="catalog-tabs reveal">
+          <button class="cat-tab active" data-cat="todos">Todos</button>
+          <button class="cat-tab" data-cat="construcao">Construção</button>
+          <button class="cat-tab" data-cat="ferragens">Ferragens</button>
+          <button class="cat-tab" data-cat="ferramentas">Ferramentas</button>
+          <button class="cat-tab" data-cat="industrial">Industrial</button>
+        </div>
+
+        <div class="catalog-grid reveal" id="catalogGrid">
+          <div class="catalog-item" data-cat="construcao">
+            <div class="catalog-icon"><i class="fas fa-cubes"></i></div>
+            <div class="catalog-body">
+              <h4>Cimento &amp; Argamassas</h4>
+              <p>Sacaria e granel para estrutura, assentamento e revestimento.</p>
+              <span class="catalog-code">CAT: CST-001</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="construcao">
+            <div class="catalog-icon"><i class="fas fa-bars-staggered"></i></div>
+            <div class="catalog-body">
+              <h4>Vergalhões &amp; Perfis</h4>
+              <p>Aço para estrutura, grades, reforços e serralheria.</p>
+              <span class="catalog-code">CAT: CST-002</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="construcao">
+            <div class="catalog-icon"><i class="fas fa-border-all"></i></div>
+            <div class="catalog-body">
+              <h4>Blocos &amp; Tijolos</h4>
+              <p>Alvenaria estrutural e de vedação em diferentes formatos.</p>
+              <span class="catalog-code">CAT: CST-003</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="ferragens">
+            <div class="catalog-icon"><i class="fas fa-screwdriver"></i></div>
+            <div class="catalog-body">
+              <h4>Parafusos &amp; Fixadores</h4>
+              <p>Linha métrica, soberba, chumbadores e fixação técnica.</p>
+              <span class="catalog-code">CAT: FRG-001</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="ferragens">
+            <div class="catalog-icon"><i class="fas fa-link"></i></div>
+            <div class="catalog-body">
+              <h4>Correntes &amp; Amarrações</h4>
+              <p>Elos, ganchos, esticadores e acessórios de carga.</p>
+              <span class="catalog-code">CAT: FRG-002</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="ferragens">
+            <div class="catalog-icon"><i class="fas fa-door-open"></i></div>
+            <div class="catalog-body">
+              <h4>Dobradiças &amp; Fechaduras</h4>
+              <p>Ferragens para portas, portões e esquadrias metálicas.</p>
+              <span class="catalog-code">CAT: FRG-003</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="ferramentas">
+            <div class="catalog-icon"><i class="fas fa-hammer"></i></div>
+            <div class="catalog-body">
+              <h4>Ferramentas Manuais</h4>
+              <p>Martelos, chaves, alicates, serras e kits de uso geral.</p>
+              <span class="catalog-code">CAT: FER-001</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="ferramentas">
+            <div class="catalog-icon"><i class="fas fa-bolt"></i></div>
+            <div class="catalog-body">
+              <h4>Elétricas &amp; Acessórios</h4>
+              <p>Furadeiras, parafusadeiras, discos, bits e consumíveis.</p>
+              <span class="catalog-code">CAT: FER-002</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="ferramentas">
+            <div class="catalog-icon"><i class="fas fa-ruler-combined"></i></div>
+            <div class="catalog-body">
+              <h4>Medição &amp; Precisão</h4>
+              <p>Trenas, níveis, esquadros e instrumentos de conferência.</p>
+              <span class="catalog-code">CAT: FER-003</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="industrial">
+            <div class="catalog-icon"><i class="fas fa-circle-notch"></i></div>
+            <div class="catalog-body">
+              <h4>Abrasivos &amp; Corte</h4>
+              <p>Discos de corte e desbaste, lixas e rebolos industriais.</p>
+              <span class="catalog-code">CAT: IND-001</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="industrial">
+            <div class="catalog-icon"><i class="fas fa-oil-can"></i></div>
+            <div class="catalog-body">
+              <h4>Lubrificantes &amp; Químicos</h4>
+              <p>Óleos, graxas, desengraxantes e insumos de manutenção.</p>
+              <span class="catalog-code">CAT: IND-002</span>
+            </div>
+          </div>
+          <div class="catalog-item" data-cat="industrial">
+            <div class="catalog-icon"><i class="fas fa-helmet-safety"></i></div>
+            <div class="catalog-body">
+              <h4>EPIs &amp; Segurança</h4>
+              <p>Luvas, óculos, calçados e proteção para operações.</p>
+              <span class="catalog-code">CAT: IND-003</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SETORES ============ -->
+    <section class="section section-dark" id="setores">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Setores Atendidos</span>
+          <h2>Fornecemos para quem não pode parar</h2>
+          <p>Soluções de abastecimento desenhadas para diferentes perfis de operação.</p>
+        </div>
+
+        <div class="sectors-grid reveal">
+          <div class="sector-card">
+            <i class="fas fa-building"></i>
+            <h3>Construção Civil</h3>
+            <p>Construtoras, empreiteiras e obras residenciais e comerciais.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-store"></i>
+            <h3>Revendas &amp; Home Centers</h3>
+            <p>Reposição de linha para lojas de materiais e ferragens.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-industry"></i>
+            <h3>Indústria</h3>
+            <p>Insumos para produção, manutenção e operações contínuas.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-screwdriver-wrench"></i>
+            <h3>Serralherias</h3>
+            <p>Perfis, fixadores e ferramentas para fabricação metálica.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-truck"></i>
+            <h3>Manutenção &amp; Frota</h3>
+            <p>Peças, ferramentas e insumos para oficinas e pátios.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-house-chimney"></i>
+            <h3>Condomínios &amp; Facilities</h3>
+            <p>Itens de reparo, conservação e manutenção predial.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-solar-panel"></i>
+            <h3>Infraestrutura</h3>
+            <p>Materiais para obras de médio e grande porte.</p>
+          </div>
+          <div class="sector-card">
+            <i class="fas fa-tools"></i>
+            <h3>Prestadores de Serviço</h3>
+            <p>Profissionais autônomos e equipes técnicas de campo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESSO ============ -->
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Como Trabalhamos</span>
+          <h2>Um processo claro, do pedido à entrega</h2>
+          <p>Organização e previsibilidade em cada etapa do fornecimento.</p>
+        </div>
+
+        <div class="process-grid reveal">
+          <div class="process-step">
+            <i class="fas fa-comments"></i>
+            <h3>Contato</h3>
+            <p>Entendemos a demanda, o perfil da obra ou operação e as especificações técnicas.</p>
+          </div>
+          <div class="process-step">
+            <i class="fas fa-file-invoice"></i>
+            <h3>Cotação</h3>
+            <p>Montamos a proposta com itens, quantidades, condições e prazos de fornecimento.</p>
+          </div>
+          <div class="process-step">
+            <i class="fas fa-boxes-packing"></i>
+            <h3>Separação</h3>
+            <p>Conferência de materiais, controle de qualidade e preparação para envio.</p>
+          </div>
+          <div class="process-step">
+            <i class="fas fa-truck-fast"></i>
+            <h3>Entrega</h3>
+            <p>Logística regional a partir de Palhoça, com acompanhamento até o destino.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFERENCIAIS ============ -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Diferenciais</span>
+          <h2>Por que escolher a ACO DURAVEL BRASIL</h2>
+          <p>Um parceiro de fornecimento que entende a realidade da sua operação.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Confiabilidade</h3>
+            <p>Compromisso com especificações técnicas e com a consistência de cada lote fornecido.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-gauge-high"></i></div>
+            <h3>Agilidade</h3>
+            <p>Processos enxutos e atendimento direto, sem burocracia desnecessária.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-handshake"></i></div>
+            <h3>Parceria</h3>
+            <p>Relacionamento de longo prazo com acompanhamento próximo de cada cliente.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+            <h3>Visão Técnica</h3>
+            <p>Apoio na escolha de materiais e na consolidação de listas de compras.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-map-location-dot"></i></div>
+            <h3>Base Regional</h3>
+            <p>Estrutura em Palhoça, SC, com foco no atendimento à região e arredores.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-cubes-stacked"></i></div>
+            <h3>Variedade</h3>
+            <p>Linhas complementares que reduzem o número de fornecedores da sua operação.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+            <h3>Condições B2B</h3>
+            <p>Estrutura comercial voltada para volume, recorrência e contratos de fornecimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">Depoimentos</span>
+          <h2>Quem compra, recomenda</h2>
+          <p>Retorno de parceiros que confiam no nosso fornecimento.</p>
+        </div>
+
+        <div class="testi-grid reveal">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>"Padrão de conferência impecável. Recebemos o pedido exatamente como cotado, dentro do prazo combinado."</blockquote>
+            <div class="testi-author">
+              <div class="testi-avatar">RC</div>
+              <div>
+                <strong>Ricardo Coelho</strong>
+                <span>Construtora · Grande Florianópolis</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>"A linha de ferragens resolveu boa parte das nossas compras. Atendimento direto e sem enrolação."</blockquote>
+            <div class="testi-author">
+              <div class="testi-avatar">MA</div>
+              <div>
+                <strong>Marcia Alves</strong>
+                <span>Revenda de Materiais · Palhoça</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>"Fornecimento consistente para a nossa manutenção. Reduziu rupturas e simplificou o nosso almoxarifado."</blockquote>
+            <div class="testi-author">
+              <div class="testi-avatar">JP</div>
+              <div>
+                <strong>João Pereira</strong>
+                <span>Indústria · Região de Palhoça</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-dark" id="faq">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">Perguntas Frequentes</span>
+          <h2>Dúvidas sobre o fornecimento</h2>
+          <p>Informações objetivas para agilizar o seu contato.</p>
+        </div>
+
+        <div class="faq-wrap reveal">
+          <div class="faq-item">
+            <button class="faq-q">Vocês atendem apenas empresas? <i class="fas fa-plus"></i></button>
+            <div class="faq-a"><p>Nosso foco é o atendimento atacadista B2B: construtoras, revendas, indústrias e prestadores de serviço. As condições são estruturadas para volume e recorrência.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">É possível solicitar cotação de uma lista completa? <i class="fas fa-plus"></i></button>
+            <div class="faq-a"><p>Sim. Envie a sua lista de materiais com quantidades e especificações — consolidamos a cotação e retornamos com as condições disponíveis.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Qual é a região de atendimento? <i class="fas fa-plus"></i></button>
+            <div class="faq-a"><p>Nossa base está em Palhoça, Santa Catarina, com atendimento à região da Grande Florianópolis e demais localidades de SC, conforme o volume do pedido.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Os produtos possuem garantia? <i class="fas fa-plus"></i></button>
+            <div class="faq-a"><p>Trabalhamos com linhas de fabricantes reconhecidos no mercado. A cobertura de garantia segue as condições de cada fabricante e é informada na proposta.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Como funciona o prazo de entrega? <i class="fas fa-plus"></i></button>
+            <div class="faq-a"><p>O prazo é definido na cotação, considerando a disponibilidade dos itens e a logística até o endereço de entrega. Pedidos de reposição costumam ter prazos mais curtos.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">É possível firmar contrato de fornecimento recorrente? <i class="fas fa-plus"></i></button>
+            <div class="faq-a"><p>Sim. Para demandas contínuas, estruturamos condições específicas de fornecimento, com previsibilidade de preços e planejamento de reposição.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <span class="eyebrow" style="justify-content:center;">Pronto para abastecer?</span>
+          <h2>Fale com a nossa equipe comercial</h2>
+          <p>Envie a sua lista de materiais e receba uma proposta estruturada para a sua obra, revenda ou operação industrial.</p>
+          <div class="actions">
+            <a href="#contato" class="btn btn-accent"><i class="fas fa-paper-plane"></i> Solicitar Cotação</a>
+            <a href="#catalogo" class="btn btn-ghost"><i class="fas fa-layer-group"></i> Ver Catálogo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO / INFO ============ -->
+    <section class="section section-dark" id="contato">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Contato &amp; Localização</span>
+          <h2>Onde estamos</h2>
+          <p>Estrutura administrativa em Palhoça, Santa Catarina.</p>
+        </div>
+
+        <div class="contact-grid reveal">
+          <div class="info-card">
+            <h3><i class="fas fa-building-columns"></i> Dados da Empresa</h3>
+            <div class="info-row">
+              <span class="k">Razão Social</span>
+              <span class="v">ACO DURAVEL BRASIL LTDA.</span>
+            </div>
+            <div class="info-row">
+              <span class="k">CNPJ</span>
+              <span class="v mono">65.327.328/0001-62</span>
+            </div>
+            <div class="info-row">
+              <span class="k">Endereço</span>
+              <span class="v">R da Pedra, 347<br>Edif B Sala 903<br>Pedra Branca, Palhoça – SC<br>88.137-045</span>
+            </div>
+            <div class="info-row">
+              <span class="k">Segmento</span>
+              <span class="v">Atacado de Materiais</span>
+            </div>
+            <div class="info-row">
+              <span class="k">Atendimento</span>
+              <span class="v">B2B · Seg. a Sex.</span>
+            </div>
+          </div>
+
+          <div class="map-visual">
+            <i class="fas fa-location-dot map-pin" aria-hidden="true"></i>
+            <div class="map-label">
+              <strong>Pedra Branca · Palhoça – SC</strong>
+              <span>R da Pedra, 347 · Edif B Sala 903 · 88.137-045</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-name">ACO DURAVEL <span>BRASIL</span> LTDA.</div>
+      <div class="footer-divider" aria-hidden="true"></div>
+
+      <div class="footer-credentials">
+        <div class="cred-item">
+          <i class="fas fa-id-card"></i>
+          <strong>CNPJ:</strong> <span class="mono">65.327.328/0001-62</span>
+        </div>
+        <div class="cred-item">
+          <i class="fas fa-map-pin"></i>
+          <span><strong>R da Pedra, 347</strong>, Edif B Sala 903, Pedra Branca, Palhoça – SC, 88.137-045</span>
+        </div>
+      </div>
+
+      <div class="location-banner">
+        <i class="fas fa-location-dot"></i> Pedra Branca · Palhoça · Santa Catarina
+      </div>
+
+      <div class="footer-note">© ACO DURAVEL BRASIL LTDA.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- Mobile nav ----------
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('mainNav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+      });
+      nav.querySelectorAll('.nav-links a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+    })();
+
+    // ---------- Catalog filter ----------
+    (function () {
+      var tabs = document.querySelectorAll('.cat-tab');
+      var items = document.querySelectorAll('.catalog-item');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          var cat = tab.getAttribute('data-cat');
+          items.forEach(function (item) {
+            var match = (cat === 'todos' || item.getAttribute('data-cat') === cat);
+            item.style.display = match ? 'flex' : 'none';
+          });
+        });
+      });
+    })();
+
+    // ---------- FAQ accordion ----------
+    (function () {
+      var items = document.querySelectorAll('.faq-item');
+      items.forEach(function (item) {
+        var q = item.querySelector('.faq-q');
+        q.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+          items.forEach(function (i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    })();
+
+    // ---------- Reveal on scroll ----------
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // ---------- Animated bars ----------
+    (function () {
+      var fills = document.querySelectorAll('.bar-fill');
+      if (!fills.length) return;
+      if (!('IntersectionObserver' in window)) {
+        fills.forEach(function (f) { f.style.width = f.getAttribute('data-fill') + '%'; });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            var el = e.target;
+            el.style.width = el.getAttribute('data-fill') + '%';
+            io.unobserve(el);
+          }
+        });
+      }, { threshold: 0.4 });
+      fills.forEach(function (f) { io.observe(f); });
+    })();
+  </script>
+</body>
+</html>
